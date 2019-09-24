@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.Variable"
+		table="variables" catalog="freeciv_web" optimistic-lock="version">
+		<composite-id name="id"
+			class="org.freeciv.persistence.pojo.VariableId">
+			<key-property name="hostport" type="string">
+				<column name="hostport" length="64" />
+			</key-property>
+			<key-property name="name" type="string">
+				<column name="name" length="64" />
+			</key-property>
+		</composite-id>
+		<property name="value" type="string">
+			<column name="value" length="64" />
+		</property>
+	</class>
+</hibernate-mapping>

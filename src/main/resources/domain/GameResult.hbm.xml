@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.GameResult"
+		table="game_results" catalog="freeciv_web" optimistic-lock="version">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="playerOne" type="string">
+			<column name="playerOne" length="32" />
+		</property>
+		<property name="playerTwo" type="string">
+			<column name="playerTwo" length="32" />
+		</property>
+		<property name="winner" type="string">
+			<column name="winner" length="32" />
+		</property>
+		<property name="endDate" type="date">
+			<column name="endDate" length="10" />
+		</property>
+	</class>
+</hibernate-mapping>

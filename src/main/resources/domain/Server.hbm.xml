@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.Server"
+		table="servers" catalog="freeciv_web">
+		<composite-id name="id"
+			class="org.freeciv.persistence.pojo.ServerId">
+			<key-property name="host" type="string">
+				<column name="host" length="249" />
+			</key-property>
+			<key-property name="port" type="int">
+				<column name="port" />
+			</key-property>
+		</composite-id>
+		<property name="version" type="string">
+			<column name="version" length="64" />
+		</property>
+		<property name="patches" type="string">
+			<column name="patches" />
+		</property>
+		<property name="capability" type="string">
+			<column name="capability" />
+		</property>
+		<property name="state" type="string">
+			<column name="state" length="20" />
+		</property>
+		<property name="ruleset" type="string">
+			<column name="ruleset" />
+		</property>
+		<property name="topic" type="string">
+			<column name="topic" />
+		</property>
+		<property name="type" type="string">
+			<column name="type" />
+		</property>
+		<property name="humans" type="string">
+			<column name="humans" length="64" />
+		</property>
+		<property name="message" type="string">
+			<column name="message" />
+		</property>
+		<property name="stamp" type="timestamp">
+			<column name="stamp" length="19" not-null="true" />
+		</property>
+		<property name="available" type="java.lang.Integer">
+			<column name="available" />
+		</property>
+		<property name="serverid" type="string">
+			<column name="serverid" />
+		</property>
+	</class>
+</hibernate-mapping>

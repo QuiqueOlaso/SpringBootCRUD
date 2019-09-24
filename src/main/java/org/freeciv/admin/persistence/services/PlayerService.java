@@ -1,8 +1,8 @@
-package com.quiqueolaso.persistence.services;
+package org.freeciv.admin.persistence.services;
 
 import java.util.List;
 
-import com.quiqueolaso.persistence.pojos.Player;
+import org.freeciv.admin.persistence.pojos.Player;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -24,6 +24,13 @@ public interface PlayerService {
 	 * @param t the t
 	 */
 	public void updatePlayer(Player t);
+	
+	/**
+	 * Removes the player.
+	 *
+	 * @param id the id
+	 */
+	public void removePlayer(Player t);
 
 	/**
 	 * Gets the todo.

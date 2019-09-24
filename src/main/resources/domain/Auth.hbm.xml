@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.Auth" table="auth"
+		catalog="freeciv_web" optimistic-lock="version">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="username" type="string">
+			<column name="username" length="32" unique="true" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="128" unique="true" />
+		</property>
+		<property name="activated" type="java.lang.Integer">
+			<column name="activated" />
+		</property>
+		<property name="secureHashedPassword" type="string">
+			<column name="secure_hashed_password" length="128" />
+		</property>
+		<property name="ip" type="string">
+			<column name="ip" length="16" />
+		</property>
+	</class>
+</hibernate-mapping>

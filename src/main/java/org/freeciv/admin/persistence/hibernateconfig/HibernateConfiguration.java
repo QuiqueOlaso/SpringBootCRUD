@@ -1,4 +1,4 @@
-package com.quiqueolaso.persistence.hibernateconfig;
+package org.freeciv.admin.persistence.hibernateconfig;
 
 import java.util.Properties;
 

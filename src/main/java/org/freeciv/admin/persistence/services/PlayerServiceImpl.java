@@ -1,8 +1,8 @@
-package com.quiqueolaso.persistence.services;
+package org.freeciv.admin.persistence.services;
 
 import java.util.List;
 
-import com.quiqueolaso.persistence.pojos.Player;
+import org.freeciv.admin.persistence.pojos.Player;
 
 public class PlayerServiceImpl implements PlayerService {
 

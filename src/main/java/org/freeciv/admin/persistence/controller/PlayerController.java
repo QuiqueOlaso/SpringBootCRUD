@@ -1,16 +1,15 @@
-package com.quiqueolaso.persistence.controller;
+package org.freeciv.admin.persistence.controller;
 
 import java.util.List;
 
+import org.freeciv.admin.persistence.pojos.Player;
+import org.freeciv.admin.persistence.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.quiqueolaso.persistence.pojos.Player;
-import com.quiqueolaso.persistence.services.PlayerService;
 
 // TODO: Auto-generated Javadoc
 /**

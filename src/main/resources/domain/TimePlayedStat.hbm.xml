@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.TimePlayedStat"
+		table="time_played_stats" catalog="freeciv_web"
+		optimistic-lock="version">
+		<id name="statsDate" type="date">
+			<column name="statsDate" length="10" />
+			<generator class="assigned" />
+		</id>
+		<property name="timePlayed" type="java.lang.Integer">
+			<column name="timePlayed" />
+		</property>
+	</class>
+</hibernate-mapping>

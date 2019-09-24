@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.GamePlayedStat"
+		table="games_played_stats" catalog="freeciv_web"
+		optimistic-lock="version">
+		<composite-id name="id"
+			class="org.freeciv.persistence.pojo.GamePlayedStatId">
+			<key-property name="statsDate" type="date">
+				<column name="statsDate" length="10" />
+			</key-property>
+			<key-property name="gameType" type="int">
+				<column name="gameType" />
+			</key-property>
+		</composite-id>
+		<property name="gameCount" type="java.lang.Integer">
+			<column name="gameCount" />
+		</property>
+	</class>
+</hibernate-mapping>

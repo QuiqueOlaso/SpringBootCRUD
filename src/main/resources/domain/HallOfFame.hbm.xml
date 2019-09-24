@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-abr-2019 10:01:09 by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+	<class name="org.freeciv.persistence.pojo.HallOfFame"
+		table="hall_of_fame" catalog="freeciv_web" optimistic-lock="version">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property name="username" type="string">
+			<column name="username" length="32" not-null="true" />
+		</property>
+		<property name="nation" type="string">
+			<column name="nation" length="64" not-null="true" />
+		</property>
+		<property name="score" type="java.lang.Integer">
+			<column name="score" />
+		</property>
+		<property name="endTurn" type="string">
+			<column name="end_turn" length="4" />
+		</property>
+		<property name="endDate" type="date">
+			<column name="end_date" length="10" />
+		</property>
+		<property name="ip" type="string">
+			<column name="ip" length="16" />
+		</property>
+	</class>
+</hibernate-mapping>
