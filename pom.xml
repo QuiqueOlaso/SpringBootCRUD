@@ -9,12 +9,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SpringBootHelloWorld</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 
+
+	<!-- spring-boot-starter-parent provides all maven defaults required for 
+		any spring project -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.8.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -25,11 +29,16 @@
 	</properties>
 
 	<dependencies>
+		<!-- because we are developing a web app -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!-- because we are developing a persistence (hibernate) app -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -52,9 +61,11 @@
 		<!-- <dependency> <groupId>org.threeten</groupId> <artifactId>threetenbp</artifactId> 
 			<version>0.7.2</version> </dependency> -->
 
-		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-data-jdbc</artifactId> 
-			</dependency> <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
-			<scope>runtime</scope> </dependency> -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<!-- <scope>runtime</scope> -->
+		</dependency>
 
 	</dependencies>
 
@@ -65,6 +76,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
+		<finalName>SpringBootCRUD</finalName>
+
 	</build>
 
 </project>
