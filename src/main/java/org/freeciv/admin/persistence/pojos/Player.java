@@ -13,7 +13,7 @@ import javax.persistence.Table;
  * The Class Player.
  */
 @Entity
-@Table(name = "TODO")
+@Table(name = "players")
 public class Player implements Serializable {
 
 	/** The Constant serialVersionUID. */
@@ -21,28 +21,36 @@ public class Player implements Serializable {
 
 	/** The id. */
 	@Id
-	@Column(name = "ID")
+	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private PlayerId id;
 
+	/** The name. */
+	@Column(name = "name")
+	private String name;
+
+	/** The hostport. */
+	@Column(name = "hostport")
+	private String hostport;
+
 	/** The user. */
-	@Column(name = "TASK_NAME")
+	@Column(name = "user")
 	private String user;
 
 	/** The nation. */
-	@Column(name = "TASK_NAME")
+	@Column(name = "nation")
 	private String nation;
 
 	/** The type. */
-	@Column(name = "TASK_NAME")
+	@Column(name = "type")
 	private String type;
 
 	/** The host. */
-	@Column(name = "TASK_NAME")
+	@Column(name = "host")
 	private String host;
 
 	/** The flag. */
-	@Column(name = "TASK_NAME")
+	@Column(name = "flag")
 	private String flag;
 
 	/**
@@ -74,6 +82,28 @@ public class Player implements Serializable {
 	public Player(PlayerId id, String user, String nation, String type, String host, String flag) {
 		super();
 		this.id = id;
+		this.user = user;
+		this.nation = nation;
+		this.type = type;
+		this.host = host;
+		this.flag = flag;
+	}
+
+	/**
+	 * Instantiates a new player.
+	 *
+	 * @param name     the name
+	 * @param hostport the hostport
+	 * @param user     the user
+	 * @param nation   the nation
+	 * @param type     the type
+	 * @param host     the host
+	 * @param flag     the flag
+	 */
+	public Player(String name, String hostport, String user, String nation, String type, String host, String flag) {
+		super();
+		this.name = name;
+		this.hostport = hostport;
 		this.user = user;
 		this.nation = nation;
 		this.type = type;
@@ -187,6 +217,42 @@ public class Player implements Serializable {
 	 */
 	public void setFlag(String flag) {
 		this.flag = flag;
+	}
+
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * Gets the hostport.
+	 *
+	 * @return the hostport
+	 */
+	public String getHostport() {
+		return hostport;
+	}
+
+	/**
+	 * Sets the hostport.
+	 *
+	 * @param hostport the new hostport
+	 */
+	public void setHostport(String hostport) {
+		this.hostport = hostport;
 	}
 
 }
