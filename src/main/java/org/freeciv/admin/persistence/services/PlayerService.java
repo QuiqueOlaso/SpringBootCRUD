@@ -22,23 +22,17 @@ public interface PlayerService {
 	 * Update player.
 	 *
 	 * @param t the t
+	 * @return the player
 	 */
-	public void updatePlayer(Player t);
-	
-	/**
-	 * Removes the player.
-	 *
-	 * @param id the id
-	 */
-	public void removePlayer(Player t);
+	public Player updatePlayer(Player t);
 
 	/**
-	 * Gets the todo.
+	 * Gets the player.
 	 *
 	 * @param id the id
-	 * @return the todo
+	 * @return the player
 	 */
-	public Player getTodo(Long id);
+	public Player getPlayer(Long id);
 
 	/**
 	 * Gets the all players.
@@ -53,5 +47,12 @@ public interface PlayerService {
 	 * @param id the id
 	 */
 	public void deletePlayer(long id);
+
+	/**
+	 * Delete player.
+	 *
+	 * @param t the t
+	 */
+	void deletePlayer(Player t);
 
 }

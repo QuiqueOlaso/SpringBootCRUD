@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class HelloWorldApplication.
+ * The Class AdminApplication.
  */
 @SpringBootApplication
-public class HelloWorldApplication {
+public class AdminApplication {
 
 	/**
 	 * The main method.
@@ -16,7 +16,8 @@ public class HelloWorldApplication {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(HelloWorldApplication.class, args);
+		// SpringApplication.run(HelloWorldApplication.class, args);
+		SpringApplication.run(AdminApplication.class, args);
 	}
 
 }

@@ -35,25 +35,24 @@ public class PlayerController {
 	/**
 	 * Adds the player.
 	 *
-	 * @param t the t
+	 * @param player the t
 	 * @return the player
 	 */
 	@RequestMapping(value = "/players/addPlayer", method = RequestMethod.POST, headers = "Accept=application/json")
-	public Player addPlayer(@RequestBody Player t) {
-		Player player = service.addPlayer(t);
-		return player;
+	public Player addPlayer(@RequestBody Player player) {
+		return service.addPlayer(player);
 	}
 
 	/**
 	 * Update player.
 	 *
-	 * @param t the t
+	 * @param player the t
 	 * @return the player
 	 */
 	@RequestMapping(value = "/players/updatePlayer", method = RequestMethod.PUT, headers = "Accept=application/json")
-	public Player updatePlayer(@RequestBody Player t) {
-		service.updatePlayer(t);
-		return t;
+	public Player updatePlayer(@RequestBody Player player) {
+		service.updatePlayer(player);
+		return player;
 	}
 
 	/**

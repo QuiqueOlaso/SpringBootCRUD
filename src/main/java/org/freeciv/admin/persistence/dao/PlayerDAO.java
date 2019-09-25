@@ -11,47 +11,46 @@ import org.freeciv.admin.persistence.pojos.Player;
 public interface PlayerDAO {
 
 	/**
-	 * Save.
+	 * Adds the player.
 	 *
-	 * @param entity the entity
+	 * @param player the player
 	 */
-	void save(Player entity);
+	public void addPlayer(Player player);
 
 	/**
-	 * Removes the.
+	 * Gets the players.
 	 *
-	 * @param entity the entity
+	 * @return the players
 	 */
-	void remove(Player entity);
+	public List<Player> getPlayers();
 
 	/**
-	 * List.
+	 * Delete player.
 	 *
-	 * @return the list
+	 * @param id the id
 	 */
-	List<Player> list();
+	public void deletePlayer(int id);
 
 	/**
-	 * Find all.
+	 * Delete player.
 	 *
-	 * @return the list
+	 * @param player the player
 	 */
-	List<Player> findAll();
+	public void deletePlayer(Player player);
 
 	/**
-	 * Find by id.
+	 * Update player.
+	 *
+	 * @param player the player
+	 */
+	public void updatePlayer(Player player);
+
+	/**
+	 * Gets the player.
 	 *
 	 * @param id the id
 	 * @return the player
 	 */
-	Player findById(Integer id);
-
-	/**
-	 * Find by similar name.
-	 *
-	 * @param name the name
-	 * @return the list
-	 */
-	List<Player> findBySimilarName(String name);
+	public Player getPlayer(int id);
 
 }

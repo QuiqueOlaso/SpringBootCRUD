@@ -3,88 +3,102 @@ package org.freeciv.admin.persistence.dao;
 import java.util.List;
 
 import org.freeciv.admin.persistence.pojos.Player;
-import org.freeciv.admin.persistence.utils.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class PlayerDAOImpl.
  */
+@Repository("playerDao")
 public class PlayerDAOImpl implements PlayerDAO {
 
-	/** The session. */
-	Session session;
+	/** The session factory. */
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	/**
-	 * Instantiates a new player DAO impl.
+	 * Sets the session factory.
+	 *
+	 * @param sessionFactory the new session factory
 	 */
-	public PlayerDAOImpl() {
-		session = HibernateUtil.getSessionFactory().openSession();
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 
 	/**
-	 * Save.
+	 * Adds the player.
 	 *
 	 * @param player the player
 	 */
-	public void save(Player player) {
-		session.beginTransaction();
-		session.saveOrUpdate(player);
-		session.getTransaction().commit();
-		session.close();
-
+	@Override
+	public void addPlayer(Player player) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(player);
 	}
 
 	/**
-	 * Removes the.
+	 * Gets the players.
+	 *
+	 * @return the players
+	 */
+	@Override
+	public List<Player> getPlayers() {
+		Session session = sessionFactory.getCurrentSession();
+		List<Player> list = session.createQuery("from players").list();
+		return list;
+	}
+
+	/**
+	 * Delete player.
+	 *
+	 * @param id the id
+	 */
+	@Override
+	public void deletePlayer(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Player player = session.load(Player.class, new Integer(id));
+		if (player != null) {
+			session.delete(player);
+		}
+	}
+
+	/**
+	 * Delete player.
 	 *
 	 * @param player the player
 	 */
-	public void remove(Player player) {
-		session.beginTransaction();
-		session.delete(player);
-		session.getTransaction().commit();
-		session.close();
+	@Override
+	public void deletePlayer(Player player) {
+		Session session = sessionFactory.getCurrentSession();
+		if (player != null) {
+			session.delete(player);
+		}
 	}
 
 	/**
-	 * Find by id.
+	 * Update player.
+	 *
+	 * @param player the player
+	 */
+	@Override
+	public void updatePlayer(Player player) {
+		Session session = sessionFactory.getCurrentSession();
+		session.update(player);
+	}
+
+	/**
+	 * Gets the player.
 	 *
 	 * @param id the id
 	 * @return the player
 	 */
-	public Player findById(Integer id) {
-		return null;
-	}
-
-	/**
-	 * Find by similar name.
-	 *
-	 * @param name the name
-	 * @return the list
-	 */
-	public List<Player> findBySimilarName(String name) {
-		return list();
-	}
-
-	/**
-	 * Find all.
-	 *
-	 * @return the list
-	 */
 	@Override
-	public List<Player> findAll() {
-		return list();
-	}
-
-	/**
-	 * List.
-	 *
-	 * @return the list
-	 */
-	public List<Player> list() {
-		List<Player> player = session.createCriteria(Player.class).list();
-		session.close();
+	public Player getPlayer(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		Player player = (Player) session.get(Player.class, id);
 		return player;
 	}
 
