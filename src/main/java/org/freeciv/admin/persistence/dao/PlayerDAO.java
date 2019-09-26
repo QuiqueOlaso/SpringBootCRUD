@@ -3,6 +3,7 @@ package org.freeciv.admin.persistence.dao;
 import java.util.List;
 
 import org.freeciv.admin.persistence.pojos.Player;
+import org.freeciv.admin.persistence.pojos.PlayerId;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -27,9 +28,17 @@ public interface PlayerDAO {
 	/**
 	 * Delete player.
 	 *
-	 * @param id the id
+	 * @param name     the name
+	 * @param hostport the hostport
 	 */
-	public void deletePlayer(int id);
+	public void deletePlayer(String name, String hostport);
+
+	/**
+	 * Delete player.
+	 *
+	 * @param playerId the player id
+	 */
+	public void deletePlayer(PlayerId playerId);
 
 	/**
 	 * Delete player.
@@ -51,6 +60,15 @@ public interface PlayerDAO {
 	 * @param id the id
 	 * @return the player
 	 */
-	public Player getPlayer(int id);
+	public Player getPlayer(PlayerId id);
+
+	/**
+	 * Gets the player.
+	 *
+	 * @param name     the name
+	 * @param hostport the hostport
+	 * @return the player
+	 */
+	public Player getPlayer(String name, String hostport);
 
 }

@@ -27,17 +27,32 @@
 				<th colspan="2">Add/Edit player</th>
 			</tr>
 			<tr>
-				<td>Task Name</td>
-				<td><input type="text" ng-model="playerForm.taskName" /></td>
+				<td>Name</td>
+				<td><input type="text" ng-model="playerForm.playerId.name" /></td>
 			</tr>
 			<tr>
-				<td>Task Desc</td>
-				<td><input type="text" ng-model="playerForm.taskDesc" /></td>
+				<td>HostPort</td>
+				<td><input type="text" ng-model="playerForm.playerId.hostport" /></td>
 			</tr>
 			<tr>
-				<td>Status</td>
-				<td><select id="status" ng-model="playerForm.status"
-					ng-options="x for x in status" /></select></td>
+				<td>User</td>
+				<td><input type="text" ng-model="playerForm.user" /></td>
+			</tr>
+			<tr>
+				<td>Nation</td>
+				<td><input type="text" ng-model="playerForm.nation" /></td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<<td><input type="text" ng-model="playerForm.type" /></td>
+			</tr>
+			<tr>
+				<td>Host</td>
+				<<td><input type="text" ng-model="playerForm.host" /></td>
+			</tr>
+			<tr>
+				<td>Flag</td>
+				<<td><input type="text" ng-model="playerForm.flag" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Submit"
@@ -49,18 +64,26 @@
 	<table>
 		<tr>
 
-			<th width="120">Task Name</th>
-			<th width="120">Task Desc</th>
-			<th width="60">Status</th>
-			<th width="60">Operations</th>
+			<th width="120">Name</th>
+			<th width="120">HostPort</th>
+			<th width="60">User</th>
+			<th width="60">Nation</th>
+			<th width="60">Type</th>
+			<th width="60">Host</th>
+			<th width="60">Flag</th>
 
 		</tr>
 
 		<tr ng-repeat="player in players" ng-init="statusCls=getClass(player)">
 
-			<td>{{ player.taskName }}</td>
-			<td>{{ player.taskDesc }}</td>
-			<td class="statusCls">{{ player.status }}</td>
+			<td>{{ player.playerId.name }}</td>
+			<td>{{ player.playerId.hostport }}</td>
+			<td>{{ player.user }}</td>
+			<td>{{ player.nation }}</td>
+			<td>{{ player.type }}</td>
+			<td>{{ player.host }}</td>
+			<td>{{ player.flag }}</td>
+
 
 			<td><a ng-click="editPlayer(player)" class="blue-button">Edit</a>
 				| <a ng-click="deletePlayer(player)" class="red-button">Delete</a></td>

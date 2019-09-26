@@ -71,9 +71,9 @@ public class PlayerController {
 	 *
 	 * @param id the id
 	 */
-	@RequestMapping(value = "/players/deletePlayer/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-	public void deleteCust(@PathVariable long id) {
-		service.deletePlayer(id);
+	@RequestMapping(value = "/players/deletePlayer/{id}&{hostport}", method = RequestMethod.DELETE, headers = "Accept=application/json")
+	public void deletePlayer(@PathVariable String name, @PathVariable String hostport) {
+		service.deletePlayer(name, hostport);
 	}
 
 }

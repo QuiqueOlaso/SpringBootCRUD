@@ -3,6 +3,7 @@ package org.freeciv.admin.persistence.services;
 import java.util.List;
 
 import org.freeciv.admin.persistence.pojos.Player;
+import org.freeciv.admin.persistence.pojos.PlayerId;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -29,10 +30,19 @@ public interface PlayerService {
 	/**
 	 * Gets the player.
 	 *
-	 * @param id the id
+	 * @param name     the name
+	 * @param hostport the hostport
 	 * @return the player
 	 */
-	public Player getPlayer(Long id);
+	public Player getPlayer(String name, String hostport);
+
+	/**
+	 * Gets the player.
+	 *
+	 * @param playerId the player id
+	 * @return the player
+	 */
+	Player getPlayer(PlayerId playerId);
 
 	/**
 	 * Gets the all players.
@@ -44,15 +54,23 @@ public interface PlayerService {
 	/**
 	 * Delete player.
 	 *
-	 * @param id the id
+	 * @param t the t
 	 */
-	public void deletePlayer(long id);
+	void deletePlayer(Player player);
 
 	/**
 	 * Delete player.
 	 *
-	 * @param t the t
+	 * @param playerId the player id
 	 */
-	void deletePlayer(Player t);
+	void deletePlayer(PlayerId playerId);
+
+	/**
+	 * Delete player.
+	 *
+	 * @param name     the name
+	 * @param hostport the hostport
+	 */
+	void deletePlayer(String name, String hostport);
 
 }

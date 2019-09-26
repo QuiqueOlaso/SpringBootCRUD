@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.freeciv.admin.persistence.dao.PlayerDAORepository;
 import org.freeciv.admin.persistence.pojos.Player;
+import org.freeciv.admin.persistence.pojos.PlayerId;
 
 import java.util.ArrayList;
 import javax.transaction.Transactional;
@@ -50,14 +51,27 @@ public class PlayerServiceImpl implements PlayerService {
 	/**
 	 * Gets the player.
 	 *
-	 * @param id the id
+	 * @param name     the name
+	 * @param hostport the hostport
+	 * @return the player
+	 */
+	@Override
+	public Player getPlayer(String name, String hostport) {
+		PlayerId playerId = new PlayerId(name, hostport);
+		return getPlayer(playerId);
+	}
+
+	/**
+	 * Gets the player.
+	 *
+	 * @param playerId the player id
 	 * @return the player
 	 */
 	@Override
 	@Transactional
-	public Player getPlayer(Long id) {
-		Player todo = dao.findOne(id);
-		return todo;
+	public Player getPlayer(PlayerId playerId) {
+		Player player = dao.findOne(playerId);
+		return player;
 	}
 
 	/**
@@ -76,23 +90,37 @@ public class PlayerServiceImpl implements PlayerService {
 	/**
 	 * Delete player.
 	 *
-	 * @param id the id
+	 * @param name     the name
+	 * @param hostport the hostport
 	 */
 	@Override
 	@Transactional
-	public void deletePlayer(long id) {
-		dao.delete(id);
+	public void deletePlayer(String name, String hostport) {
+		PlayerId playerId = new PlayerId(name, hostport);
+		deletePlayer(playerId);
 	}
 
 	/**
 	 * Delete player.
 	 *
-	 * @param t the t
+	 * @param playerId the player id
 	 */
 	@Override
 	@Transactional
-	public void deletePlayer(Player t) {
-		dao.delete(t);
+	public void deletePlayer(PlayerId playerId) {
+		Player player = getPlayer(playerId);
+		deletePlayer(player);
+	}
+
+	/**
+	 * Delete player.
+	 *
+	 * @param player the player
+	 */
+	@Override
+	@Transactional
+	public void deletePlayer(Player player) {
+		dao.delete(player);
 	}
 
 }
