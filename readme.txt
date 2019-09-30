@@ -19,3 +19,18 @@ Crud
 ######################
 
 http://myjavablog.com/2018/06/29/3-spring-boot-angular-js-hibernate-crud/
+
+* HibernateConfiguration.java
+* application.properties
+* Player.java
+* PlayerController.java
+* PlayerService.java
+* PlayerServiceImpl.java
+* PlayerDAO.java
+* PlayerDAOImpl.java
+* index.xhtml /.jsp
+* app.jsp
+* app.css
+* AdminApplication
+
+https://www.callicoder.com/hibernate-spring-boot-jpa-composite-primary-key-example/

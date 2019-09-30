@@ -7,17 +7,19 @@ import org.freeciv.admin.persistence.pojos.PlayerId;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class PlayerDAOImpl.
  */
-@Repository("playerDao")
+@Repository("playerDAO")
 public class PlayerDAOImpl implements PlayerDAO {
 
 	/** The session factory. */
 	@Autowired
+	@Qualifier("sessionFactory")
 	private SessionFactory sessionFactory;
 
 	/**

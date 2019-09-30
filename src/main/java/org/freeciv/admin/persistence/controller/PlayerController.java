@@ -20,7 +20,7 @@ public class PlayerController {
 
 	/** The service. */
 	@Autowired
-	PlayerService service;
+	PlayerService playerService;
 
 	/**
 	 * Gets the home page.
@@ -40,7 +40,7 @@ public class PlayerController {
 	 */
 	@RequestMapping(value = "/players/addPlayer", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Player addPlayer(@RequestBody Player player) {
-		return service.addPlayer(player);
+		return playerService.addPlayer(player);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class PlayerController {
 	 */
 	@RequestMapping(value = "/players/updatePlayer", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public Player updatePlayer(@RequestBody Player player) {
-		service.updatePlayer(player);
+		playerService.updatePlayer(player);
 		return player;
 	}
 
@@ -62,7 +62,7 @@ public class PlayerController {
 	 */
 	@RequestMapping(value = "/players/getAllPlayers", method = RequestMethod.GET, headers = "Accept=application/json")
 	public List<Player> getAllPlayers() {
-		List<Player> playerList = service.getAllPlayers();
+		List<Player> playerList = playerService.getAllPlayers();
 		return playerList;
 	}
 
@@ -73,7 +73,7 @@ public class PlayerController {
 	 */
 	@RequestMapping(value = "/players/deletePlayer/{id}&{hostport}", method = RequestMethod.DELETE, headers = "Accept=application/json")
 	public void deletePlayer(@PathVariable String name, @PathVariable String hostport) {
-		service.deletePlayer(name, hostport);
+		playerService.deletePlayer(name, hostport);
 	}
 
 }

@@ -2,10 +2,8 @@ package org.freeciv.admin.persistence.pojos;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 // TODO: Auto-generated Javadoc
@@ -20,9 +18,7 @@ public class Player implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** The id. */
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@EmbeddedId
 	private PlayerId id;
 
 	/** The name. */

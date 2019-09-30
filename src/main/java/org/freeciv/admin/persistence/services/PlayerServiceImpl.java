@@ -1,6 +1,7 @@
 package org.freeciv.admin.persistence.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.freeciv.admin.persistence.dao.PlayerDAORepository;
 import org.freeciv.admin.persistence.pojos.Player;
@@ -25,27 +26,27 @@ public class PlayerServiceImpl implements PlayerService {
 	/**
 	 * Adds the player.
 	 *
-	 * @param t the t
+	 * @param player the t
 	 * @return the player
 	 */
 	@Override
 	@Transactional
-	public synchronized Player addPlayer(Player t) {
-		dao.save(t);
-		return t;
+	public synchronized Player addPlayer(Player player) {
+		dao.save(player);
+		return player;
 	}
 
 	/**
 	 * Update player.
 	 *
-	 * @param t the t
+	 * @param player the t
 	 * @return the player
 	 */
 	@Override
 	@Transactional
-	public Player updatePlayer(Player t) {
-		dao.save(t);
-		return t;
+	public Player updatePlayer(Player player) {
+		dao.save(player);
+		return player;
 	}
 
 	/**
@@ -56,6 +57,7 @@ public class PlayerServiceImpl implements PlayerService {
 	 * @return the player
 	 */
 	@Override
+	@Transactional
 	public Player getPlayer(String name, String hostport) {
 		PlayerId playerId = new PlayerId(name, hostport);
 		return getPlayer(playerId);
@@ -70,7 +72,7 @@ public class PlayerServiceImpl implements PlayerService {
 	@Override
 	@Transactional
 	public Player getPlayer(PlayerId playerId) {
-		Player player = dao.findOne(playerId);
+		Player player = dao.findByPlayerId(playerId);
 		return player;
 	}
 
@@ -82,9 +84,9 @@ public class PlayerServiceImpl implements PlayerService {
 	@Override
 	@Transactional
 	public List<Player> getAllPlayers() {
-		List<Player> todoList = new ArrayList<>();
-		dao.findAll().forEach(e -> todoList.add(e));
-		return todoList;
+		List<Player> playerList = new ArrayList<>();
+		dao.findAll().forEach(e -> playerList.add(e));
+		return playerList;
 	}
 
 	/**

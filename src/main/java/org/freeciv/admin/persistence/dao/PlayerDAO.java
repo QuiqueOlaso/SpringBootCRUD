@@ -57,10 +57,10 @@ public interface PlayerDAO {
 	/**
 	 * Gets the player.
 	 *
-	 * @param id the id
+	 * @param playerId the id
 	 * @return the player
 	 */
-	public Player getPlayer(PlayerId id);
+	public Player getPlayer(PlayerId playerId);
 
 	/**
 	 * Gets the player.
