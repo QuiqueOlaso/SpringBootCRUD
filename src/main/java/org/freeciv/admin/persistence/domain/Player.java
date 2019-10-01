@@ -17,17 +17,9 @@ public class Player implements Serializable {
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The id. */
+	/** The playerId. */
 	@EmbeddedId
-	private PlayerId id;
-
-	/** The name. */
-	@Column(name = "name")
-	private String name;
-
-	/** The hostport. */
-	@Column(name = "hostport")
-	private String hostport;
+	private PlayerId playerId;
 
 	/** The user. */
 	@Column(name = "user")
@@ -59,25 +51,25 @@ public class Player implements Serializable {
 	/**
 	 * Instantiates a new players.
 	 *
-	 * @param id the id
+	 * @param playerId the playerId
 	 */
-	public Player(PlayerId id) {
-		this.id = id;
+	public Player(PlayerId playerId) {
+		this.playerId = playerId;
 	}
 
 	/**
 	 * Instantiates a new player.
 	 *
-	 * @param id     the id
-	 * @param user   the user
-	 * @param nation the nation
-	 * @param type   the type
-	 * @param host   the host
-	 * @param flag   the flag
+	 * @param playerId the playerId
+	 * @param user     the user
+	 * @param nation   the nation
+	 * @param type     the type
+	 * @param host     the host
+	 * @param flag     the flag
 	 */
-	public Player(PlayerId id, String user, String nation, String type, String host, String flag) {
+	public Player(PlayerId playerId, String user, String nation, String type, String host, String flag) {
 		super();
-		this.id = id;
+		this.playerId = playerId;
 		this.user = user;
 		this.nation = nation;
 		this.type = type;
@@ -98,8 +90,8 @@ public class Player implements Serializable {
 	 */
 	public Player(String name, String hostport, String user, String nation, String type, String host, String flag) {
 		super();
-		this.name = name;
-		this.hostport = hostport;
+		this.playerId.setName(name);
+		this.playerId.setHostport(hostport);
 		this.user = user;
 		this.nation = nation;
 		this.type = type;
@@ -112,17 +104,17 @@ public class Player implements Serializable {
 	 *
 	 * @return the id
 	 */
-	public PlayerId getId() {
-		return this.id;
+	public PlayerId getPlayerId() {
+		return this.playerId;
 	}
 
 	/**
-	 * Sets the id.
+	 * Sets the playerId.
 	 *
-	 * @param id the new id
+	 * @param playerId the new playerId
 	 */
-	public void setId(PlayerId id) {
-		this.id = id;
+	public void setPlayerId(PlayerId playerId) {
+		this.playerId = playerId;
 	}
 
 	/**
@@ -221,7 +213,7 @@ public class Player implements Serializable {
 	 * @return the name
 	 */
 	public String getName() {
-		return name;
+		return this.playerId.getName();
 	}
 
 	/**
@@ -230,7 +222,7 @@ public class Player implements Serializable {
 	 * @param name the new name
 	 */
 	public void setName(String name) {
-		this.name = name;
+		this.playerId.setName(name);
 	}
 
 	/**
@@ -239,7 +231,7 @@ public class Player implements Serializable {
 	 * @return the hostport
 	 */
 	public String getHostport() {
-		return hostport;
+		return this.playerId.getHostport();
 	}
 
 	/**
@@ -248,7 +240,7 @@ public class Player implements Serializable {
 	 * @param hostport the new hostport
 	 */
 	public void setHostport(String hostport) {
-		this.hostport = hostport;
+		this.playerId.setHostport(hostport);
 	}
 
 }

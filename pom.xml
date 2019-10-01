@@ -5,9 +5,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.quiqueolaso</groupId>
-	<artifactId>SpringBootHelloWorld</artifactId>
+	<artifactId>SpringBootCRUD</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootHelloWorld</name>
+	<name>SpringBootCRUD</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>war</packaging>
 
