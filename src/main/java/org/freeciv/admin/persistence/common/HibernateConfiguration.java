@@ -1,4 +1,4 @@
-package org.freeciv.admin.persistence.hibernateconfig;
+package org.freeciv.admin.persistence.common;
 
 import java.util.Properties;
 
@@ -74,7 +74,7 @@ public class HibernateConfiguration {
 	 *
 	 * @return the local session factory bean
 	 */
-	@Bean
+	@Bean(name = "entityManagerFactory")
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
@@ -84,7 +84,6 @@ public class HibernateConfiguration {
 		hibernateProperties.put("hibernate.show_sql", SHOW_SQL);
 		hibernateProperties.put("hibernate.hbm2ddl.auto", HBM2DDL_AUTO);
 		sessionFactory.setHibernateProperties(hibernateProperties);
-
 		return sessionFactory;
 	}
 

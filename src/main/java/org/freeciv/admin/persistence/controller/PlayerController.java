@@ -2,8 +2,8 @@ package org.freeciv.admin.persistence.controller;
 
 import java.util.List;
 
-import org.freeciv.admin.persistence.pojos.Player;
-import org.freeciv.admin.persistence.services.PlayerService;
+import org.freeciv.admin.persistence.domain.Player;
+import org.freeciv.admin.persistence.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -2,8 +2,8 @@ package org.freeciv.admin.persistence.dao;
 
 import java.util.List;
 
-import org.freeciv.admin.persistence.pojos.Player;
-import org.freeciv.admin.persistence.pojos.PlayerId;
+import org.freeciv.admin.persistence.domain.Player;
+import org.freeciv.admin.persistence.domain.PlayerId;
 
 // TODO: Auto-generated Javadoc
 /**

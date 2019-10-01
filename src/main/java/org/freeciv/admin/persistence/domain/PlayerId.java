@@ -1,4 +1,4 @@
-package org.freeciv.admin.persistence.pojos;
+package org.freeciv.admin.persistence.domain;
 
 import java.io.Serializable;
 

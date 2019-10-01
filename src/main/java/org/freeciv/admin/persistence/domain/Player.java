@@ -1,4 +1,4 @@
-package org.freeciv.admin.persistence.pojos;
+package org.freeciv.admin.persistence.domain;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * The Class Player.
  */
 @Entity
-@Table(name = "players")
+@Table(name = "players", catalog = "freeciv_web")
 public class Player implements Serializable {
 
 	/** The Constant serialVersionUID. */

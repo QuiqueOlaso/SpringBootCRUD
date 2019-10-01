@@ -1,11 +1,9 @@
-package org.freeciv.admin.persistence.services;
+package org.freeciv.admin.persistence.service;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.freeciv.admin.persistence.dao.PlayerDAORepository;
-import org.freeciv.admin.persistence.pojos.Player;
-import org.freeciv.admin.persistence.pojos.PlayerId;
+import org.freeciv.admin.persistence.domain.Player;
+import org.freeciv.admin.persistence.domain.PlayerId;
+import org.freeciv.admin.persistence.repository.PlayerDAORepository;
 
 import java.util.ArrayList;
 import javax.transaction.Transactional;
