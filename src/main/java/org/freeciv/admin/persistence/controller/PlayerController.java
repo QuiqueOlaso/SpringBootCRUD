@@ -29,7 +29,7 @@ public class PlayerController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getHomePage() {
-		return "index";
+		return "index-q";
 	}
 
 	/**

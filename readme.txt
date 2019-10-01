@@ -34,3 +34,5 @@ http://myjavablog.com/2018/06/29/3-spring-boot-angular-js-hibernate-crud/
 * AdminApplication
 
 https://www.callicoder.com/hibernate-spring-boot-jpa-composite-primary-key-example/
+
+https://www.baeldung.com/spring-boot-crud-thymeleaf
